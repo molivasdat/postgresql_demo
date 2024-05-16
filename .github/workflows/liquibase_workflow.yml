@@ -74,7 +74,7 @@ env:
 ###
     LB_BASE_DIR: /liquibase/changelog
     LB_ENVIRONMENT: DEV
-    LIQUIBASE_COMMAND_CHANGELOG_FILE: initial.postgres.sql
+    LIQUIBASE_COMMAND_CHANGELOG_FILE: main.xml
     LIQUIBASE_COMMAND_CHECKS_RUN_CHECKS_OUTPUT: issues
     LIQUIBASE_COMMAND_TAG: ${{ github.run_number }}
     LIQUIBASE_DBCLHISTORY_ENABLED: true
