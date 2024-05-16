@@ -17,12 +17,7 @@
 ###    Liquibase quality checks configuration file
 ###    https://docs.liquibase.com/commands/quality-checks/home.html
 ###
-### 3. Snapshot_DEV.json
-###    Initial snapshot file for target database (will be updated as part of the Liquibase flow)
-###    Run: liquibase snapshot --outputfile="Snapshot_DEV.json" --snapshotformat=json
-###    https://docs.liquibase.com/commands/inspection/snapshot.html
-###
-### 4. changelog.main.xml
+### 3. changelog.main.xml
 ###    Liquibase changelog file
 ###    https://docs.liquibase.com/concepts/changelogs/home.html
 ###
@@ -31,32 +26,75 @@
 ### GitHub Actions documentation: https://docs.github.com/en/actions
 ###
 
-name: Liquibase
+name: 1. Liquibase Workflow
 
 ###
 ### Pipelines can be triggered manually or via events
 ###
 on:
   workflow_dispatch:
-
+    inputs:
+      labels:
+        type: string
+        description: Label filters
+      quality-checks:
+        type: choice
+        description: Quality checks T/F
+        required: true
+        options:
+        - T
+        - F
+      drift-detection:
+        type: choice
+        description: Drift detection T/F
+        required: true
+        options:
+        - T
+        - F
+      test-rollbacks:
+        type: choice
+        description: Test rollback scripts T/F
+        required: true
+        options:
+        - T
+        - F
 ###
 ### Set Liquibase environment variables
 ###
 env:
+###
+### Prompts
+###
+    LB_LABELS: ${{ github.event.inputs.labels }}
+    LB_TEST_CHECKS: ${{ github.event.inputs.quality-checks }}
+    LB_TEST_DRIFT: ${{ github.event.inputs.drift-detection }}
+    LB_TEST_ROLLBACKS: ${{ github.event.inputs.test-rollbacks }}
+###
+### Liquibase specific
+###
+    LB_BASE_DIR: /liquibase/changelog
     LB_ENVIRONMENT: DEV
     LIQUIBASE_COMMAND_CHANGELOG_FILE: changelog.main.xml
+    LIQUIBASE_COMMAND_CHECKS_RUN_CHECKS_OUTPUT: issues
     LIQUIBASE_COMMAND_TAG: ${{ github.run_number }}
+    LIQUIBASE_DBCLHISTORY_ENABLED: true
+    LIQUIBASE_LOG_FILE: /liquibase/changelog/liquibase.dev.log.json
+    LIQUIBASE_LOG_FORMAT: json_pretty
+    LIQUIBASE_LOG_LEVEL: warning
+    LIQUIBASE_MIRROR_CONSOLE_MESSAGES_TO_LOG: false
+    LIQUIBASE_SEARCH_PATH: /liquibase/changelog
+    LIQUIBASE_SHOW_BANNER: false
 ###
 ### These values should be pulled from GitHub secrets
-### Secrets should include LIQUIBASE_COMMAND_URL, LIQUIBASE_COMMAND_USERNAME, LIQUIBASE_COMMAND_PASSWORD, LIQUIBASE_PRO_LICENSE_KEY
+### Secrets should include LIQUIBASE_COMMAND_URL, LIQUIBASE_COMMAND_USERNAME, LIQUIBASE_COMMAND_PASSWORD, LIQUIBASE_LICENSE_KEY
 ###
     LIQUIBASE_COMMAND_URL: ${{ secrets.LIQUIBASE_DEV_URL }}
     LIQUIBASE_COMMAND_USERNAME: ${{ secrets.LIQUIBASE_DEV_USER }}
     LIQUIBASE_COMMAND_PASSWORD: ${{ secrets.LIQUIBASE_DEV_PASSWORD }}
-    LIQUIBASE_PRO_LICENSE_KEY: ${{ secrets.LIQUIBASE_PROKEY }}
+    LIQUIBASE_LICENSE_KEY: ${{ secrets.LIQUIBASE_PROKEY }}
 
 jobs:
-  liquibase:
+  liquibase-workflow:
 ###
 ### Update agent location
 ###
@@ -67,7 +105,7 @@ jobs:
 ###
     steps:
     - name: Checking out repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         token: ${{ secrets.LIQUIBASE_GITHUB_TOKEN }}
 ###
@@ -75,14 +113,15 @@ jobs:
 ### Liquibase should be installed where your agents run or invoked via Docker
 ###
     - name: Running Liquibase
-      run: docker run --env LIQUIBASE_COMMAND_USERNAME --env LIQUIBASE_COMMAND_PASSWORD --env LIQUIBASE_COMMAND_URL --env LIQUIBASE_PRO_LICENSE_KEY --env LIQUIBASE_COMMAND_CHANGELOG_FILE --env LIQUIBASE_COMMAND_TAG --env LB_ENVIRONMENT --rm -v ${{ github.workspace }}:/liquibase/changelog liquibase/liquibase:latest flow --flow-file=liquibase.flowfile.yaml
+      run: docker run --env LIQUIBASE_SEARCH_PATH --env LIQUIBASE_SHOW_BANNER --env LIQUIBASE_DBCLHISTORY_ENABLED --env LIQUIBASE_COMMAND_USERNAME --env LIQUIBASE_COMMAND_PASSWORD --env LIQUIBASE_COMMAND_URL --env LIQUIBASE_LICENSE_KEY --env LIQUIBASE_COMMAND_CHANGELOG_FILE --env LIQUIBASE_COMMAND_CHECKS_RUN_CHECKS_OUTPUT --env LIQUIBASE_LOG_FILE --env LIQUIBASE_LOG_FORMAT --env LIQUIBASE_LOG_LEVEL --env LIQUIBASE_MIRROR_CONSOLE_MESSAGES_TO_LOG --env LIQUIBASE_COMMAND_TAG --env LB_BASE_DIR --env LB_ENVIRONMENT --env LB_LABELS --env LB_TEST_DRIFT --env LB_TEST_CHECKS --env LB_TEST_ROLLBACKS --rm -v ${{ github.workspace }}:/liquibase/changelog liquibase/liquibase:latest flow --flow-file=liquibase.flowfile.yaml
 ###
 ### Update respository
 ###
     - name: Updating repository
+      if: success() || failure()
       run: |
         git config --global user.name github-actions
         git config --global user.email github-actions@github.com
         git add .
-        git commit -m "Update snapshots."
+        git commit -m "Update Liquibase repository."
         git push --force
