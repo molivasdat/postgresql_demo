@@ -592,3 +592,593 @@
   "changesetAuthor": "",
   "operationOutcome": "fail"
 }
+{
+  "timestamp": "2024-05-16T11:12:01.090Z",
+  "level": "WARNING",
+  "class": "liquibase.database",
+  "thread": "1",
+  "message": "Failed to restore the auto commit to true",
+  "changesetOutcome": "NOOP",
+  "liquibaseSystemUser": "liquibase",
+  "deploymentOutcome": "NOOP",
+  "liquibaseSchemaName": "",
+  "liquibaseInternalCommand": "checks run",
+  "deploymentOutcomeCount": "0",
+  "liquibaseVersion": "",
+  "operationStop": "",
+  "operationOutcome": "success",
+  "changelogFile": "initial.postgres.sql",
+  "changesetsUpdated": {
+    "changeset": "null",
+    "changesetCount": 0
+  },
+  "operationStart": "2024-05-16T11:07:03.937Z",
+  "liquibaseCommandName": "flow",
+  "deploymentId": "",
+  "rowsAffected": "0",
+  "liquibaseCatalogName": "",
+  "changesetId": "",
+  "changesetAuthor": "",
+  "liquibaseTargetUrl": "",
+  "qualityChecks": {
+    "changelogChecks": [
+      {
+        "executedChecks": [
+          {
+            "customizations": [
+              {
+                "constraint": "null",
+                "objectTypes": "null",
+                "stripComments": true,
+                "exceptionsList": "null",
+                "lookbehindMessage": "null",
+                "runInTransactionValue": "null",
+                "tableName": "null",
+                "changeTypeList": "null",
+                "maxColumns": "null",
+                "privilegeList": "null",
+                "message": "null",
+                "lookaheadSearchString": "idx_",
+                "caseSensitive": false,
+                "pathFilterRegex": "null",
+                "constraintOperator": "null",
+                "lookaheadMessage": "null",
+                "lookbehindSearchString": "null",
+                "logicConditional": "null",
+                "columnName": "null",
+                "primarySearchString": "INDEX",
+                "allowedList": "null",
+                "operator": "null",
+                "negativeLookaheadMessage": "Match found: '<PRIMARY_SEARCH_STRING>' is not followed by '<LOOKAHEAD_SEARCH_STRING>' in Changeset '<CHANGESET>'. Indexes must be prepended with IDX_",
+                "searchString": "null",
+                "scriptName": "null",
+                "negativeLookbehindMessage": "null"
+              }
+            ]
+            ,
+            "description": "Check triggers if the user-supplied regex pattern A is NOT followed by the user-supplied regex pattern B",
+            "checkName": "Pattern a not followed by pattern b",
+            "enabled": true,
+            "checkShortName": "IndexMustUseIDX",
+            "severity": "2"
+          },
+          {
+            "customizations": [
+              ],
+            "description": "This check triggers when a changeset does not have a rollback defined.",
+            "checkName": "Rollback Required for Changeset",
+            "enabled": true,
+            "checkShortName": "RollbackRequired",
+            "severity": "0"
+          }
+        ]
+        ,
+        "hasProLicense": true,
+        "changesetsValidated": [
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-1"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-2"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-4"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-5"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-6"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-7"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-8"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-9"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-10"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-11"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-12"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-13"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-14"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-15"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-16"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-17"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-18"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-19"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-20"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-21"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-22"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-23"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-24"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-25"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-26"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-27"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-28"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-29"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-30"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-31"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-32"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-33"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-34"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-35"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-36"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-37"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-38"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-39"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-40"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-41"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-42"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-43"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-44"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-45"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-46"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-47"
+          },
+          {
+            "author": "mike",
+            "filepath": "initial.postgres.sql",
+            "id": "create-year-domain-48"
+          },
+          {
+            "author": "mike",
+            "filepath": "initial.postgres.sql",
+            "id": "create-mpaa-rating-49"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-50"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-51"
+          },
+          {
+            "author": "mike",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-52"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-53"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-54"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-55"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-56"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-57"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-58"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-59"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-60"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-61"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-62"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-63"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-64"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-65"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-66"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-67"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-68"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-69"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-70"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-71"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-72"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-73"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-74"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-75"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-76"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-77"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-78"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-79"
+          },
+          {
+            "author": "mike",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-80"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-81"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-82"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-83"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-84"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-85"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-86"
+          },
+          {
+            "author": "molivas",
+            "filepath": "initial.postgres.sql",
+            "id": "1715703844604-87"
+          }
+        ]
+        ,
+        "productVersion": "4.27.0",
+        "username": "liquibase",
+        "issueCount": 2,
+        "executionDate": "2024-05-16T11:12:01.086226033Z",
+        "unlicensedChangesetsCount": 0,
+        "unlicensedChangesets": [
+          ],
+        "unrecognizedChecks": [
+          ],
+        "executedChecksCount": 2,
+        "issues": [
+          {
+            "chainedCheckOutcomes": {
+              },
+            "changesetAuthor": "molivas",
+            "changesetFilePath": "initial.postgres.sql",
+            "changesetId": "1715703844604-5",
+            "checkMessage": "Match found: 'INDEX' is not followed by 'idx_' in Changeset '1715703844604-5'. Indexes must be prepended with IDX_",
+            "checkName": "Pattern a not followed by pattern b",
+            "checkReturnCode": 2,
+            "checkSeverity": "MAJOR",
+            "checkShortName": "IndexMustUseIDX",
+            "logicConditional": ""
+          },
+          {
+            "chainedCheckOutcomes": {
+              },
+            "changesetAuthor": "molivas",
+            "changesetFilePath": "initial.postgres.sql",
+            "changesetId": "1715703844604-58",
+            "checkMessage": "Match found: 'INDEX' is not followed by 'idx_' in Changeset '1715703844604-58'. Indexes must be prepended with IDX_",
+            "checkName": "Pattern a not followed by pattern b",
+            "checkReturnCode": 2,
+            "checkSeverity": "MAJOR",
+            "checkShortName": "IndexMustUseIDX",
+            "logicConditional": ""
+          }
+        ]
+        ,
+        "changesetsValidatedCount": 86,
+        "changelogFilePath": "main.xml",
+        "integration": "cli",
+        "unparseableChangesets": [
+          ],
+        "unparseableChangesetsCount": 0,
+        "checksSettingsFile": "null",
+        "returnCode": 2
+      }
+    ]
+    ,
+    "databaseChecks": [
+      ]
+  },
+  "liquibaseSystemName": ""
+}
+{
+  "timestamp": "2024-05-16T11:12:01.166Z",
+  "level": "WARNING",
+  "class": "liquibase.command",
+  "thread": "1",
+  "message": "Exception occurred",
+  "exception": "\nliquibase.exception.CommandExecutionException: liquibase.exception.CommandExecutionException: liquibase.exception.CommandExecutionException: liquibase.command.CommandFailedException: Checks run command exited with error code of 2\n\tat com.datical.liquibase.ext.command.FlowCommandStep.runAction(FlowCommandStep.java:342)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.lambda$executeStage$0(FlowCommandStep.java:310)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.executeStage(FlowCommandStep.java:280)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.run(FlowCommandStep.java:133)\n\tat liquibase.command.CommandScope.execute(CommandScope.java:219)\n\tat liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:55)\n\tat liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:24)\n\tat picocli.CommandLine.executeUserObject(CommandLine.java:2041)\n\tat picocli.CommandLine.access$1500(CommandLine.java:148)\n\tat picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2461)\n\tat picocli.CommandLine$RunLast.handle(CommandLine.java:2453)\n\tat picocli.CommandLine$RunLast.handle(CommandLine.java:2415)\n\tat picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2273)\n\tat picocli.CommandLine$RunLast.execute(CommandLine.java:2417)\n\tat picocli.CommandLine.execute(CommandLine.java:2170)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:395)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:175)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:370)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:175)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:367)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:104)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)\n\tat java.base/java.lang.reflect.Method.invoke(Unknown Source)\n\tat liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)\nCaused by: liquibase.exception.CommandExecutionException: liquibase.exception.CommandExecutionException: liquibase.command.CommandFailedException: Checks run command exited with error code of 2\n\tat com.datical.liquibase.ext.flow.action.LiquibaseCommandAction.execute(LiquibaseCommandAction.java:145)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.lambda$runAction$1(FlowCommandStep.java:338)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.runAction(FlowCommandStep.java:332)\n\t... 31 more\nCaused by: liquibase.exception.CommandExecutionException: liquibase.command.CommandFailedException: Checks run command exited with error code of 2\n\tat liquibase.command.CommandScope.execute(CommandScope.java:257)\n\tat com.datical.liquibase.ext.flow.action.LiquibaseCommandAction.lambda$execute$0(LiquibaseCommandAction.java:137)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.flow.action.LiquibaseCommandAction.execute(LiquibaseCommandAction.java:136)\n\t... 37 more\nCaused by: liquibase.command.CommandFailedException: Checks run command exited with error code of 2\n\tat liquibase.command.CommandResultsBuilder.commandFailed(CommandResultsBuilder.java:70)\n\tat com.datical.liquibase.ext.command.checks.ChecksRunCommandStep.doRun(ChecksRunCommandStep.java:522)\n\tat com.datical.liquibase.ext.command.checks.ChecksRunCommandStep.lambda$run$7(ChecksRunCommandStep.java:320)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.command.checks.ChecksRunCommandStep.run(ChecksRunCommandStep.java:320)\n\tat liquibase.command.CommandScope.execute(CommandScope.java:219)\n\t... 43 more\n",
+  "flowFileFailedStage": "Default"
+}
+{
+  "timestamp": "2024-05-16T11:12:01.378Z",
+  "level": "SEVERE",
+  "class": "liquibase.integration",
+  "thread": "1",
+  "message": "Checks run command exited with error code of 2",
+  "exception": "\nliquibase.exception.CommandExecutionException: liquibase.command.CommandFailedException: Checks run command exited with error code of 2\n\tat liquibase.command.CommandScope.execute(CommandScope.java:257)\n\tat liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:55)\n\tat liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:24)\n\tat picocli.CommandLine.executeUserObject(CommandLine.java:2041)\n\tat picocli.CommandLine.access$1500(CommandLine.java:148)\n\tat picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2461)\n\tat picocli.CommandLine$RunLast.handle(CommandLine.java:2453)\n\tat picocli.CommandLine$RunLast.handle(CommandLine.java:2415)\n\tat picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2273)\n\tat picocli.CommandLine$RunLast.execute(CommandLine.java:2417)\n\tat picocli.CommandLine.execute(CommandLine.java:2170)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:395)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:175)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:370)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:175)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:367)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:104)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)\n\tat java.base/java.lang.reflect.Method.invoke(Unknown Source)\n\tat liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)\nCaused by: liquibase.command.CommandFailedException: Checks run command exited with error code of 2\n\tat liquibase.command.CommandResultsBuilder.commandFailed(CommandResultsBuilder.java:70)\n\tat com.datical.liquibase.ext.command.checks.ChecksRunCommandStep.doRun(ChecksRunCommandStep.java:522)\n\tat com.datical.liquibase.ext.command.checks.ChecksRunCommandStep.lambda$run$7(ChecksRunCommandStep.java:320)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.command.checks.ChecksRunCommandStep.run(ChecksRunCommandStep.java:320)\n\tat liquibase.command.CommandScope.execute(CommandScope.java:219)\n\tat com.datical.liquibase.ext.flow.action.LiquibaseCommandAction.lambda$execute$0(LiquibaseCommandAction.java:137)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.flow.action.LiquibaseCommandAction.execute(LiquibaseCommandAction.java:136)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.lambda$runAction$1(FlowCommandStep.java:338)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.runAction(FlowCommandStep.java:332)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.lambda$executeStage$0(FlowCommandStep.java:310)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.executeStage(FlowCommandStep.java:280)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.run(FlowCommandStep.java:133)\n\tat liquibase.command.CommandScope.execute(CommandScope.java:219)\n\t... 23 more\n",
+  "changesetId": "",
+  "changesetAuthor": "",
+  "operationOutcome": "fail"
+}
