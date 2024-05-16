@@ -1,0 +1,40 @@
+{
+  "diff": {
+    "diffFormat": 1,
+    "created": "Thu May 16 19:54:43 UTC 2024",
+    "databases": {
+      "reference": {
+        "majorVersion": "14",
+        "minorVersion": "6",
+        "name": "Offline snowflake",
+        "url": "offline:snowflake?snapshot=Snapshot_DEV.json"
+      },
+      "target": {
+        "majorVersion": "14",
+        "minorVersion": "6",
+        "name": "PostgreSQL",
+        "url": "jdbc:postgresql://prevalid-dev.cybdbarn5lel.us-east-1.rds.amazonaws.com:5432/DEMO1"
+      }
+    },
+    "unexpectedObjects": [
+      {
+        "unexpectedObject": {
+          "name": "first",
+          "type": "column",
+          "relationName": "OUTOFBAND",
+          "schemaName": "public",
+          "catalogName": "DEMO1"
+        }
+      },
+      {
+        "unexpectedObject": {
+          "name": "OUTOFBAND",
+          "type": "table",
+          "schemaName": "public",
+          "catalogName": "DEMO1"
+        }
+      }
+    ]
+    
+  }
+}
