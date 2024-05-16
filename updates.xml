@@ -35,4 +35,9 @@ xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.l
         </loadData>
         <rollback>delete from contractors where contractor_id IN (1, 2)</rollback>
     </changeSet>
+    <changeSet author="mikeo" id="createindex-103">
+        <createIndex indexName="id_email" tableName="contractors">
+            <column name="email"/>
+        </createIndex>
+    </changeSet>
     </databaseChangeLog>
