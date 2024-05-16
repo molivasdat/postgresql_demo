@@ -1,0 +1,1 @@
+liquibase --changelog-file=initial.postgres.sql generateChangelog --diffTypes=catalogs,checkconstraints,columns,data,foreignkeys,functions,indexes,primarykeys,sequences,storedprocedures,tables,triggers,uniqueconstraints,views
