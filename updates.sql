@@ -12,5 +12,5 @@ INSERT INTO public.contractors (contractor_id, first_name, last_name, email, act
 
 
 --changeSet mikeo:createindex-103
-CREATE INDEX "id_email" ON "contractors"("email");
+CREATE INDEX "idx_email" ON "contractors"("email");
 --rollback drop index idx_email
