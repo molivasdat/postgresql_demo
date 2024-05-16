@@ -9,3 +9,7 @@ INSERT INTO public.contractors (contractor_id, first_name, last_name, email, act
   (2, 'Stephanie', 'James', 'Steph.James@outsourcingex.com', TRUE, 'Steph');
 --rollback delete from contractors where contractor_id = 1
 --rollback delete from contractors where contractor_id = 2
+
+--changeSet mikeo:createindex-103
+CREATE INDEX "id_email" ON "contractors"("email");
+--rollback drop index idx_email
