@@ -122,3 +122,473 @@
   "liquibaseTargetUrl": "",
   "liquibaseSystemName": ""
 }
+{
+  "timestamp": "2024-05-16T06:12:34.735Z",
+  "level": "WARNING",
+  "class": "liquibase.executor",
+  "thread": "1",
+  "message": "\nChangeset 'create-year-domain-48' by 'mike' failed to deploy with 'psql'. Please check psql logs or use the --log-level flag for more information.",
+  "deploymentOutcome": "NOOP",
+  "changesetLabel": "",
+  "liquibasePsqlKeepTempPath": "",
+  "changesetFilepath": "initial.postgres.sql",
+  "liquibaseVersion": "",
+  "liquibasePsqlLogFile": "",
+  "changesetOperationStart": "2024-05-16T06:12:34.697Z",
+  "runWith": "psql",
+  "operationStart": "2024-05-16T05:50:57.861Z",
+  "changesetContext": "",
+  "liquibasePsqlKeepTemp": "false",
+  "deploymentId": "5838659156",
+  "liquibaseCatalogName": "DEMO1",
+  "changesetId": "create-year-domain-48",
+  "changesetOutcome": "NOOP",
+  "liquibaseSystemUser": "liquibase",
+  "liquibaseSchemaName": "",
+  "commandLabelFilter": "",
+  "liquibaseInternalCommand": "update",
+  "liquibasePsqlKeepTempName": "",
+  "deploymentOutcomeCount": "0",
+  "failOnError": "true",
+  "operationStop": "",
+  "operationOutcome": "success",
+  "changelogFile": "initial.postgres.sql",
+  "changesetSql": "CREATE DOMAIN public.\"year\" AS integer;\nALTER DOMAIN public.\"year\" OWNER TO postgres;\nALTER DOMAIN public.\"year\" ADD CONSTRAINT year_check CHECK (VALUE >= 1901 AND VALUE <=2155);",
+  "changesetsUpdated": {
+    "changeset": "null",
+    "changesetCount": 0
+  },
+  "rollbackOnError": "false",
+  "liquibaseCommandName": "flow",
+  "rowsAffected": "0",
+  "changesetComment": "",
+  "changesetAuthor": "mike",
+  "liquibaseTargetUrl": "jdbc:postgresql://prevalid-dev.cybdbarn5lel.us-east-1.rds.amazonaws.com:5432/DEMO1",
+  "liquibaseSystemName": "",
+  "commandContextFilter": ""
+}
+{
+  "timestamp": "2024-05-16T06:12:34.745Z",
+  "level": "SEVERE",
+  "class": "liquibase.changelog",
+  "thread": "1",
+  "message": "ChangeSet initial.postgres.sql::create-year-domain-48::mike encountered an exception.",
+  "exception": "\nliquibase.exception.DatabaseException: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat com.datical.liquibase.ext.tools.PsqlExecutor.execute(PsqlExecutor.java:47)\n\tat liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:141)\n\tat liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1176)\n\tat liquibase.changelog.ChangeSet.execute(ChangeSet.java:764)\n\tat liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:119)\n\tat liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:68)\n\tat liquibase.changelog.ChangeLogIterator$2.lambda$run$0(ChangeLogIterator.java:133)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:122)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat liquibase.Scope.child(Scope.java:256)\n\tat liquibase.Scope.child(Scope.java:260)\n\tat liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:89)\n\tat liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:112)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:110)\n\tat liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:105)\n\tat com.datical.liquibase.ext.command.ProUpdateCommandStep.run(ProUpdateCommandStep.java:42)\n\tat liquibase.command.CommandScope.execute(CommandScope.java:219)\n\tat com.datical.liquibase.ext.flow.action.LiquibaseCommandAction.lambda$execute$0(LiquibaseCommandAction.java:137)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.flow.action.LiquibaseCommandAction.execute(LiquibaseCommandAction.java:136)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.lambda$runAction$1(FlowCommandStep.java:338)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.runAction(FlowCommandStep.java:332)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.lambda$executeStage$0(FlowCommandStep.java:310)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.executeStage(FlowCommandStep.java:280)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.run(FlowCommandStep.java:133)\n\tat liquibase.command.CommandScope.execute(CommandScope.java:219)\n\tat liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:55)\n\tat liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:24)\n\tat picocli.CommandLine.executeUserObject(CommandLine.java:2041)\n\tat picocli.CommandLine.access$1500(CommandLine.java:148)\n\tat picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2461)\n\tat picocli.CommandLine$RunLast.handle(CommandLine.java:2453)\n\tat picocli.CommandLine$RunLast.handle(CommandLine.java:2415)\n\tat picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2273)\n\tat picocli.CommandLine$RunLast.execute(CommandLine.java:2417)\n\tat picocli.CommandLine.execute(CommandLine.java:2170)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:395)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:175)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:370)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:175)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:367)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:104)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)\n\tat java.base/java.lang.reflect.Method.invoke(Unknown Source)\n\tat liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)\nCaused by: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat com.datical.liquibase.ext.tools.PsqlRunner.executeCommand(PsqlRunner.java:205)\n\tat com.datical.liquibase.ext.tools.PsqlExecutor.execute(PsqlExecutor.java:36)\n\t... 70 more\nCaused by: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat java.base/java.lang.ProcessBuilder.start(Unknown Source)\n\tat java.base/java.lang.ProcessBuilder.start(Unknown Source)\n\tat liquibase.change.core.ExecuteShellCommandChange.executeCommand(ExecuteShellCommandChange.java:175)\n\tat com.datical.liquibase.ext.tools.PsqlRunner.executeCommand(PsqlRunner.java:190)\n\t... 71 more\nCaused by: java.io.IOException: error=2, No such file or directory\n\tat java.base/java.lang.ProcessImpl.forkAndExec(Native Method)\n\tat java.base/java.lang.ProcessImpl.<init>(Unknown Source)\n\tat java.base/java.lang.ProcessImpl.start(Unknown Source)\n\t... 75 more\n",
+  "deploymentOutcome": "NOOP",
+  "changesetLabel": "",
+  "liquibasePsqlKeepTempPath": "",
+  "changesetFilepath": "initial.postgres.sql",
+  "liquibaseVersion": "",
+  "liquibasePsqlLogFile": "",
+  "changesetOperationStart": "2024-05-16T06:12:34.697Z",
+  "runWith": "psql",
+  "operationStart": "2024-05-16T05:50:57.861Z",
+  "changesetContext": "",
+  "liquibasePsqlKeepTemp": "false",
+  "deploymentId": "5838659156",
+  "liquibaseCatalogName": "DEMO1",
+  "changesetId": "create-year-domain-48",
+  "changesetOutcome": "failed",
+  "liquibaseSystemUser": "liquibase",
+  "liquibaseSchemaName": "",
+  "commandLabelFilter": "",
+  "liquibaseInternalCommand": "update",
+  "liquibasePsqlKeepTempName": "",
+  "deploymentOutcomeCount": "0",
+  "failOnError": "true",
+  "operationStop": "",
+  "operationOutcome": "success",
+  "changelogFile": "initial.postgres.sql",
+  "changesetSql": "CREATE DOMAIN public.\"year\" AS integer;\nALTER DOMAIN public.\"year\" OWNER TO postgres;\nALTER DOMAIN public.\"year\" ADD CONSTRAINT year_check CHECK (VALUE >= 1901 AND VALUE <=2155);",
+  "changesetsUpdated": {
+    "changeset": "null",
+    "changesetCount": 0
+  },
+  "rollbackOnError": "false",
+  "liquibaseCommandName": "flow",
+  "rowsAffected": "0",
+  "changesetComment": "",
+  "changesetAuthor": "mike",
+  "liquibaseTargetUrl": "jdbc:postgresql://prevalid-dev.cybdbarn5lel.us-east-1.rds.amazonaws.com:5432/DEMO1",
+  "liquibaseSystemName": "",
+  "changesetOperationStop": "2024-05-16T06:12:34.745Z",
+  "commandContextFilter": ""
+}
+{
+  "timestamp": "2024-05-16T06:12:35.068Z",
+  "level": "WARNING",
+  "class": "liquibase.command",
+  "thread": "1",
+  "message": "Update command encountered exception",
+  "exception": "\nliquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset initial.postgres.sql::create-year-domain-48::mike:\n     Reason: liquibase.exception.DatabaseException: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:151)\n\tat liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:112)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:110)\n\tat liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:105)\n\tat com.datical.liquibase.ext.command.ProUpdateCommandStep.run(ProUpdateCommandStep.java:42)\n\tat liquibase.command.CommandScope.execute(CommandScope.java:219)\n\tat com.datical.liquibase.ext.flow.action.LiquibaseCommandAction.lambda$execute$0(LiquibaseCommandAction.java:137)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.flow.action.LiquibaseCommandAction.execute(LiquibaseCommandAction.java:136)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.lambda$runAction$1(FlowCommandStep.java:338)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.runAction(FlowCommandStep.java:332)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.lambda$executeStage$0(FlowCommandStep.java:310)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.executeStage(FlowCommandStep.java:280)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.run(FlowCommandStep.java:133)\n\tat liquibase.command.CommandScope.execute(CommandScope.java:219)\n\tat liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:55)\n\tat liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:24)\n\tat picocli.CommandLine.executeUserObject(CommandLine.java:2041)\n\tat picocli.CommandLine.access$1500(CommandLine.java:148)\n\tat picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2461)\n\tat picocli.CommandLine$RunLast.handle(CommandLine.java:2453)\n\tat picocli.CommandLine$RunLast.handle(CommandLine.java:2415)\n\tat picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2273)\n\tat picocli.CommandLine$RunLast.execute(CommandLine.java:2417)\n\tat picocli.CommandLine.execute(CommandLine.java:2170)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:395)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:175)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:370)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:175)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:367)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:104)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)\n\tat java.base/java.lang.reflect.Method.invoke(Unknown Source)\n\tat liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)\nCaused by: liquibase.exception.MigrationFailedException: Migration failed for changeset initial.postgres.sql::create-year-domain-48::mike:\n     Reason: liquibase.exception.DatabaseException: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat liquibase.changelog.ChangeSet.execute(ChangeSet.java:808)\n\tat liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:119)\n\tat liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:68)\n\tat liquibase.changelog.ChangeLogIterator$2.lambda$run$0(ChangeLogIterator.java:133)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:122)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat liquibase.Scope.child(Scope.java:256)\n\tat liquibase.Scope.child(Scope.java:260)\n\tat liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:89)\n\t... 52 more\nCaused by: liquibase.exception.DatabaseException: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat com.datical.liquibase.ext.tools.PsqlExecutor.execute(PsqlExecutor.java:47)\n\tat liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:141)\n\tat liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1176)\n\tat liquibase.changelog.ChangeSet.execute(ChangeSet.java:764)\n\t... 67 more\nCaused by: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat com.datical.liquibase.ext.tools.PsqlRunner.executeCommand(PsqlRunner.java:205)\n\tat com.datical.liquibase.ext.tools.PsqlExecutor.execute(PsqlExecutor.java:36)\n\t... 70 more\nCaused by: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat java.base/java.lang.ProcessBuilder.start(Unknown Source)\n\tat java.base/java.lang.ProcessBuilder.start(Unknown Source)\n\tat liquibase.change.core.ExecuteShellCommandChange.executeCommand(ExecuteShellCommandChange.java:175)\n\tat com.datical.liquibase.ext.tools.PsqlRunner.executeCommand(PsqlRunner.java:190)\n\t... 71 more\nCaused by: java.io.IOException: error=2, No such file or directory\n\tat java.base/java.lang.ProcessImpl.forkAndExec(Native Method)\n\tat java.base/java.lang.ProcessImpl.<init>(Unknown Source)\n\tat java.base/java.lang.ProcessImpl.start(Unknown Source)\n\t... 75 more\n",
+  "changesetOutcome": "NOOP",
+  "liquibaseSystemUser": "liquibase",
+  "deploymentOutcome": "NOOP",
+  "liquibaseSchemaName": "",
+  "commandLabelFilter": "",
+  "liquibaseInternalCommand": "update",
+  "deploymentOutcomeCount": "46",
+  "liquibaseVersion": "",
+  "operationStop": "",
+  "operationOutcome": "success",
+  "changelogFile": "main.xml",
+  "changesetsUpdated": {
+    "changeset": [
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-1",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-2",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-4",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-5",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-6",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-7",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-8",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-9",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-10",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-11",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-12",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-13",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-14",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-15",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-16",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-17",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-18",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-19",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-20",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-21",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-22",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-23",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-24",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-25",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-26",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-27",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-28",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-29",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-30",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-31",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-32",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-33",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-34",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-35",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-36",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-37",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-38",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-39",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-40",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-41",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-42",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-43",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-44",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-45",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-46",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      },
+      {
+        "changesetAuthor": "molivas",
+        "changesetFilepath": "initial.postgres.sql",
+        "changesetId": "1715703844604-47",
+        "changesetOutcome": "EXECUTED",
+        "deploymentId": "5838659156"
+      }
+    ]
+    ,
+    "changesetCount": 46
+  },
+  "rollbackOnError": "false",
+  "operationStart": "2024-05-16T05:50:57.861Z",
+  "liquibaseCommandName": "flow",
+  "deploymentId": "5838659156",
+  "rowsAffected": "0",
+  "liquibaseCatalogName": "DEMO1",
+  "changesetId": "create-year-domain-48",
+  "changesetAuthor": "mike",
+  "liquibaseTargetUrl": "jdbc:postgresql://prevalid-dev.cybdbarn5lel.us-east-1.rds.amazonaws.com:5432/DEMO1",
+  "liquibaseSystemName": "",
+  "commandContextFilter": ""
+}
+{
+  "timestamp": "2024-05-16T06:12:35.380Z",
+  "level": "WARNING",
+  "class": "liquibase.command",
+  "thread": "1",
+  "message": "Exception occurred",
+  "exception": "\nliquibase.exception.CommandExecutionException: liquibase.exception.CommandExecutionException: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset initial.postgres.sql::create-year-domain-48::mike:\n     Reason: liquibase.exception.DatabaseException: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat com.datical.liquibase.ext.command.FlowCommandStep.runAction(FlowCommandStep.java:342)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.lambda$executeStage$0(FlowCommandStep.java:310)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.executeStage(FlowCommandStep.java:280)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.run(FlowCommandStep.java:133)\n\tat liquibase.command.CommandScope.execute(CommandScope.java:219)\n\tat liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:55)\n\tat liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:24)\n\tat picocli.CommandLine.executeUserObject(CommandLine.java:2041)\n\tat picocli.CommandLine.access$1500(CommandLine.java:148)\n\tat picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2461)\n\tat picocli.CommandLine$RunLast.handle(CommandLine.java:2453)\n\tat picocli.CommandLine$RunLast.handle(CommandLine.java:2415)\n\tat picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2273)\n\tat picocli.CommandLine$RunLast.execute(CommandLine.java:2417)\n\tat picocli.CommandLine.execute(CommandLine.java:2170)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:395)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:175)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:370)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:175)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:367)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:104)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)\n\tat java.base/java.lang.reflect.Method.invoke(Unknown Source)\n\tat liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)\nCaused by: liquibase.exception.CommandExecutionException: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset initial.postgres.sql::create-year-domain-48::mike:\n     Reason: liquibase.exception.DatabaseException: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat com.datical.liquibase.ext.flow.action.LiquibaseCommandAction.execute(LiquibaseCommandAction.java:145)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.lambda$runAction$1(FlowCommandStep.java:338)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.runAction(FlowCommandStep.java:332)\n\t... 31 more\nCaused by: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset initial.postgres.sql::create-year-domain-48::mike:\n     Reason: liquibase.exception.DatabaseException: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat liquibase.command.CommandScope.execute(CommandScope.java:257)\n\tat com.datical.liquibase.ext.command.InternalRollbackOnErrorCommandStep.executeCommand(InternalRollbackOnErrorCommandStep.java:313)\n\tat com.datical.liquibase.ext.command.ProUpdateCommandStep.run(ProUpdateCommandStep.java:45)\n\tat liquibase.command.CommandScope.execute(CommandScope.java:219)\n\tat com.datical.liquibase.ext.flow.action.LiquibaseCommandAction.lambda$execute$0(LiquibaseCommandAction.java:137)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.flow.action.LiquibaseCommandAction.execute(LiquibaseCommandAction.java:136)\n\t... 37 more\nCaused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset initial.postgres.sql::create-year-domain-48::mike:\n     Reason: liquibase.exception.DatabaseException: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:151)\n\tat liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:112)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:110)\n\tat liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:105)\n\tat com.datical.liquibase.ext.command.ProUpdateCommandStep.run(ProUpdateCommandStep.java:42)\n\t... 44 more\nCaused by: liquibase.exception.MigrationFailedException: Migration failed for changeset initial.postgres.sql::create-year-domain-48::mike:\n     Reason: liquibase.exception.DatabaseException: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat liquibase.changelog.ChangeSet.execute(ChangeSet.java:808)\n\tat liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:119)\n\tat liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:68)\n\tat liquibase.changelog.ChangeLogIterator$2.lambda$run$0(ChangeLogIterator.java:133)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:122)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat liquibase.Scope.child(Scope.java:256)\n\tat liquibase.Scope.child(Scope.java:260)\n\tat liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:89)\n\t... 52 more\nCaused by: liquibase.exception.DatabaseException: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat com.datical.liquibase.ext.tools.PsqlExecutor.execute(PsqlExecutor.java:47)\n\tat liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:141)\n\tat liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1176)\n\tat liquibase.changelog.ChangeSet.execute(ChangeSet.java:764)\n\t... 67 more\nCaused by: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat com.datical.liquibase.ext.tools.PsqlRunner.executeCommand(PsqlRunner.java:205)\n\tat com.datical.liquibase.ext.tools.PsqlExecutor.execute(PsqlExecutor.java:36)\n\t... 70 more\nCaused by: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat java.base/java.lang.ProcessBuilder.start(Unknown Source)\n\tat java.base/java.lang.ProcessBuilder.start(Unknown Source)\n\tat liquibase.change.core.ExecuteShellCommandChange.executeCommand(ExecuteShellCommandChange.java:175)\n\tat com.datical.liquibase.ext.tools.PsqlRunner.executeCommand(PsqlRunner.java:190)\n\t... 71 more\nCaused by: java.io.IOException: error=2, No such file or directory\n\tat java.base/java.lang.ProcessImpl.forkAndExec(Native Method)\n\tat java.base/java.lang.ProcessImpl.<init>(Unknown Source)\n\tat java.base/java.lang.ProcessImpl.start(Unknown Source)\n\t... 75 more\n",
+  "flowFileFailedStage": "Default"
+}
+{
+  "timestamp": "2024-05-16T06:12:36.076Z",
+  "level": "SEVERE",
+  "class": "liquibase.integration",
+  "thread": "1",
+  "message": "Migration failed for changeset initial.postgres.sql::create-year-domain-48::mike:\n     Reason: liquibase.exception.DatabaseException: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory",
+  "exception": "\nliquibase.exception.CommandExecutionException: liquibase.exception.CommandExecutionException: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset initial.postgres.sql::create-year-domain-48::mike:\n     Reason: liquibase.exception.DatabaseException: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat com.datical.liquibase.ext.command.FlowCommandStep.runAction(FlowCommandStep.java:342)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.lambda$executeStage$0(FlowCommandStep.java:310)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.executeStage(FlowCommandStep.java:280)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.run(FlowCommandStep.java:133)\n\tat liquibase.command.CommandScope.execute(CommandScope.java:219)\n\tat liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:55)\n\tat liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:24)\n\tat picocli.CommandLine.executeUserObject(CommandLine.java:2041)\n\tat picocli.CommandLine.access$1500(CommandLine.java:148)\n\tat picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2461)\n\tat picocli.CommandLine$RunLast.handle(CommandLine.java:2453)\n\tat picocli.CommandLine$RunLast.handle(CommandLine.java:2415)\n\tat picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2273)\n\tat picocli.CommandLine$RunLast.execute(CommandLine.java:2417)\n\tat picocli.CommandLine.execute(CommandLine.java:2170)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:395)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:175)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:370)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:175)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:367)\n\tat liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:104)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)\n\tat java.base/java.lang.reflect.Method.invoke(Unknown Source)\n\tat liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)\nCaused by: liquibase.exception.CommandExecutionException: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset initial.postgres.sql::create-year-domain-48::mike:\n     Reason: liquibase.exception.DatabaseException: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat com.datical.liquibase.ext.flow.action.LiquibaseCommandAction.execute(LiquibaseCommandAction.java:145)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.lambda$runAction$1(FlowCommandStep.java:338)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.command.FlowCommandStep.runAction(FlowCommandStep.java:332)\n\t... 31 more\nCaused by: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset initial.postgres.sql::create-year-domain-48::mike:\n     Reason: liquibase.exception.DatabaseException: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat liquibase.command.CommandScope.execute(CommandScope.java:257)\n\tat com.datical.liquibase.ext.command.InternalRollbackOnErrorCommandStep.executeCommand(InternalRollbackOnErrorCommandStep.java:313)\n\tat com.datical.liquibase.ext.command.ProUpdateCommandStep.run(ProUpdateCommandStep.java:45)\n\tat liquibase.command.CommandScope.execute(CommandScope.java:219)\n\tat com.datical.liquibase.ext.flow.action.LiquibaseCommandAction.lambda$execute$0(LiquibaseCommandAction.java:137)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat com.datical.liquibase.ext.flow.action.LiquibaseCommandAction.execute(LiquibaseCommandAction.java:136)\n\t... 37 more\nCaused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset initial.postgres.sql::create-year-domain-48::mike:\n     Reason: liquibase.exception.DatabaseException: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:151)\n\tat liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:112)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:110)\n\tat liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:105)\n\tat com.datical.liquibase.ext.command.ProUpdateCommandStep.run(ProUpdateCommandStep.java:42)\n\t... 44 more\nCaused by: liquibase.exception.MigrationFailedException: Migration failed for changeset initial.postgres.sql::create-year-domain-48::mike:\n     Reason: liquibase.exception.DatabaseException: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat liquibase.changelog.ChangeSet.execute(ChangeSet.java:808)\n\tat liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:119)\n\tat liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:68)\n\tat liquibase.changelog.ChangeLogIterator$2.lambda$run$0(ChangeLogIterator.java:133)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:122)\n\tat liquibase.Scope.lambda$child$0(Scope.java:190)\n\tat liquibase.Scope.child(Scope.java:199)\n\tat liquibase.Scope.child(Scope.java:189)\n\tat liquibase.Scope.child(Scope.java:168)\n\tat liquibase.Scope.child(Scope.java:256)\n\tat liquibase.Scope.child(Scope.java:260)\n\tat liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:89)\n\t... 52 more\nCaused by: liquibase.exception.DatabaseException: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat com.datical.liquibase.ext.tools.PsqlExecutor.execute(PsqlExecutor.java:47)\n\tat liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:141)\n\tat liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1176)\n\tat liquibase.changelog.ChangeSet.execute(ChangeSet.java:764)\n\t... 67 more\nCaused by: liquibase.exception.LiquibaseException: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat com.datical.liquibase.ext.tools.PsqlRunner.executeCommand(PsqlRunner.java:205)\n\tat com.datical.liquibase.ext.tools.PsqlExecutor.execute(PsqlExecutor.java:36)\n\t... 70 more\nCaused by: java.io.IOException: Cannot run program \"psql\": error=2, No such file or directory\n\tat java.base/java.lang.ProcessBuilder.start(Unknown Source)\n\tat java.base/java.lang.ProcessBuilder.start(Unknown Source)\n\tat liquibase.change.core.ExecuteShellCommandChange.executeCommand(ExecuteShellCommandChange.java:175)\n\tat com.datical.liquibase.ext.tools.PsqlRunner.executeCommand(PsqlRunner.java:190)\n\t... 71 more\nCaused by: java.io.IOException: error=2, No such file or directory\n\tat java.base/java.lang.ProcessImpl.forkAndExec(Native Method)\n\tat java.base/java.lang.ProcessImpl.<init>(Unknown Source)\n\tat java.base/java.lang.ProcessImpl.start(Unknown Source)\n\t... 75 more\n",
+  "changesetId": "",
+  "changesetAuthor": "",
+  "operationOutcome": "fail"
+}
